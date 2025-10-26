@@ -1,0 +1,227 @@
+[
+  {
+    "id": "esc-ner-cr-port-til-de-alta-resoluci-n-para-todas-las-aplicaciones-de-radiograf-a-ndt-inspecci-n-de-soldaduras-im-genes-de-perfil-y-aeroespacial-escanea-placas-de-imagen-totalmente-flexibles-de-diferentes-resoluciones-y-formatos",
+    "name": "Escáner CR portátil de alta resolución para todas las aplicaciones de radiografía NDT: inspección de soldaduras, imágenes de perfil y aeroespacial. Escanea placas de imagen totalmente flexibles de diferentes resoluciones y formatos.",
+    "brand": "TreFoc",
+    "origin": "ALEMANIA",
+    "category": "Placas Digitales",
+    "subcategory": "RI Digital",
+    "description": "Escáner CR portátil de alta resolución para todas las aplicaciones de radiografía NDT: inspección de soldaduras, imágenes de perfil y aeroespacial. Escanea placas de imagen totalmente flexibles de diferentes resoluciones y formatos.",
+    "longDescription": "Tecnología TreFoc  Ajuste láser multienfoque para obtener valores óptimos de SNR y una calidad de imagen perfecta, similar a la de una película o mejor",
+    "price": 1234.0,
+    "images": [
+      "https://res.cloudinary.com/dxmydmsjl/image/upload/v1761411300/190911-15471529_uxh380.jpg"
+    ]
+  },
+  {
+    "id": "cr-35-ndt-esc-ner-cr",
+    "name": "CR 35 NDT – Escáner CR",
+    "brand": "TreFoc",
+    "origin": "ALEMANIA",
+    "category": "Placas Digitales",
+    "subcategory": "RI Digital",
+    "description": "Escáner de radiografía computarizada digital portátil de rayos X para fines generales",
+    "longDescription": "Portátil y compacto Con tan solo 17,5 kg, es el escáner de formato más ligero. Alto rendimiento Se pueden escanear varias placas de imágenes simultáneamente. No se necesita cuarto oscuro. Capaz de procesar placas de imágenes de todos los tamaños y grados de calidad, así como formas específicas de una pieza de trabajo. el uso de consumibles prácticamente se elimina y el tiempo para producir una imagen es drásticamente más corto. Solo se requiere un mantenimiento menor cada 2 años, incluso si se utiliza en entornos sucios y polvorientos\r\n\r\n\r\n",
+    "price": 1235.0,
+    "images": [
+      "https://res.cloudinary.com/dxmydmsjl/image/upload/v1761411300/190911-15471529_uxh380.jpg"
+    ]
+  },
+  {
+    "id": "cr-phantom",
+    "name": "CR Phantom",
+    "brand": "TreFoc",
+    "origin": "ALEMANIA",
+    "category": "Placas Digitales",
+    "subcategory": "RI Digital",
+    "description": "Todo cubierto con un solo disparo. Muestra de prueba para sistemas de Radiografía Computarizada. Ultracompacto\r\nCon solo 20 cm de altura y 27,5 cm de ancho, el CR Phantom más pequeño del mercado",
+    "longDescription": "El CR Phantom puede probar todas las características de rendimiento importantes de un sistema de escáner CR, incluida la resolución espacial básica (falta de nitidez), el contraste, el MTF, la fluctuación del rayo láser, el deslizamiento del escáner y el sombreado del escáner. Estas pruebas se describen en detalle en las normas ISO 16371-1 y ASTM E 2445 y deben realizarse periódicamente para garantizar un funcionamiento adecuado y preciso del sistema. Para facilitar el uso del CR Phantom, se puede descargar gratuitamente un procedimiento de prueba y el software D-Tect Viewer.",
+    "price": 1236.0
+  },
+  {
+    "id": "placas-de-im-genes",
+    "name": "Placas de imágenes",
+    "brand": "TreFoc",
+    "origin": "ALEMANIA",
+    "category": "Placas Digitales",
+    "subcategory": "Placas Digitales",
+    "description": "Las placas de imágenes de fósforo (IP) están diseñadas específicamente para satisfacer las necesidades de la industria de pruebas no destructivas, disponibles en diferentes resoluciones y formatos, hasta 35 cm (14\") de ancho y una longitud prácticamente ilimitada. Los IP son detectores de rayos X totalmente flexibles y extremadamente versátiles.",
+    "longDescription": "Las placas de imágenes que se manipulan y mantienen adecuadamente se pueden utilizar normalmente hasta 1000 veces o más, dependiendo de la aplicación. Podemos proporcionar placas de imágenes de 2 a 35 cm de ancho y longitud prácticamente ilimitada. También se pueden personalizar las formas, por ejemplo para piezas específicas o mantenimiento.\r\n",
+    "price": 1237.0
+  },
+  {
+    "id": "d-dr-7-end",
+    "name": "D-DR 7 END",
+    "brand": "Dürr NDT",
+    "origin": "ALEMANIA",
+    "category": "Placas Digitales",
+    "subcategory": "Radigrafia Digital Directa",
+    "description": "Detector de rayos X CMOS para inspección y pruebas de rayos X de ultra alta resolución: ¡cumple con los estándares aeroespaciales! Mayor productividad gracias a un procesamiento rápido",
+    "longDescription": "Debido a su diseño compacto, el D-DR 7 NDT es ideal para tubos pequeños, y también se puede colocar en lugares de difícil acceso o incluso dentro de un objeto. Para proporcionar un rendimiento eficiente en un entorno de prueba hostil, el detector CMOS está equipado con una carcasa de aluminio duradera y su área activa de 36 x 26 mm está protegida por una fuerte capa de carbono. El detector de rayos X se conecta directamente y se alimenta a través del puerto USB del PC. Se incluye un cable de 4,5 metros, que se puede extender hasta 9 m si es necesario.",
+    "price": 1238.0
+  },
+  {
+    "id": "d-dr-1024-end",
+    "name": "D-DR 1024 END",
+    "brand": "Dürr NDT",
+    "origin": "ALEMANIA",
+    "category": "Placas Digitales",
+    "subcategory": "Radigrafia Digital Directa",
+    "description": "Conjunto de detectores digitales (DDA) compacto y de alta resolución diseñado para la portabilidad y las duras condiciones de la radiografía industrial. Perfectamente adecuado para la inspección de soldaduras.",
+    "longDescription": "Paso de píxel de 76 μm (6,5 lp/mm), área activa de 97 x 233 mm. Apto para fuentes de rayos X y gamma. Equipado con blindaje interno para uso hasta 350 kV. Diseño extremadamente robusto con asa de transporte desmontable. Punto de acceso inalámbrico integrado. Conector para Gigabit Ethernet y alimentación. Supera la prueba de caída de 1 metro. Resistente al polvo y al agua. Herramienta de posicionamiento opcional.",
+    "price": 1239.0
+  },
+  {
+    "id": "d-dr-1025b-1043b-ndt",
+    "name": "D-DR 1025B / 1043B NDT",
+    "brand": "Dürr NDT",
+    "origin": "ALEMANIA",
+    "category": "Placas Digitales",
+    "subcategory": "Radigrafia Digital Directa",
+    "description": "Estos detectores de rayos X flexibles y de alta resolución son perfectamente adecuados para inspeccionar cordones de soldadura circunferenciales en tuberías con diámetros de 15 cm / 30 cm y superiores.",
+    "longDescription": "Adecuado para fuentes de rayos X y gamma. Equipado con blindaje interno para uso hasta 450 kV.  Mecanismo de curvatura innovador para sustituir la película tradicional. Unidad de conexión con punto de acceso inalámbrico incorporado y batería. Sistema de montaje sencillo. Exposición posible en ambos lados del detector. Hermético al polvo y al agua",
+    "price": 1240.0
+  },
+  {
+    "id": "d-dr-2329-end",
+    "name": "D-DR 2329 END",
+    "brand": "Dürr NDT",
+    "origin": "ALEMANIA",
+    "category": "Placas Digitales",
+    "subcategory": "Radigrafia Digital Directa",
+    "description": "Matriz de detectores digitales (DDA) de alta resolución de tamaño mediano diseñada para la portabilidad y las duras condiciones de la radiografía industrial. La mejor opción para uso universal con fuentes de rayos X.",
+    "longDescription": "Detector de tamaño mediano y alta resolución, diseñado para su portabilidad y las duras condiciones de la radiografía industrial. La mejor opción para uso universal con fuentes de rayos X. Paso de píxel de 75 μm (6,7 lp/mm), área activa de 230 x 288 mm. Equipado con blindaje interno para uso hasta 450 kV. Función de intercambio en caliente que permite cambiar la batería durante el funcionamiento. Punto de acceso inalámbrico integrado. Conector para Gigabit Ethernet y alimentación. Resistente al polvo y al agua.",
+    "price": 1241.0
+  },
+  {
+    "id": "d-dr-2430-end",
+    "name": "D-DR 2430 END",
+    "brand": "Dürr NDT",
+    "origin": "ALEMANIA",
+    "category": "Placas Digitales",
+    "subcategory": "Radigrafia Digital Directa",
+    "description": "Matriz de detectores digitales de alta resolución de tamaño mediano (DDA) diseñada para la portabilidad y las duras condiciones de la radiografía industrial. La mejor opción para uso universal con fuentes gamma.",
+    "longDescription": "Área activa de 233 x 291 mm. Adecuado para fuentes de rayos X y gamma. Equipado con blindaje interno para uso de hasta 350kV. Diseño extremadamente robustocon asas para facilitar su transporte. Hermético al polvo y al agua (IP67). Alta resolución. Indicadores de estado de Wi-Fi, LAN, batería y sensor. Punto de acceso inalámbrico incorporado. Conector para Gigabit Ethernet y alimentación. Pase de prueba de caída de 1 metro.",
+    "price": 1242.0
+  },
+  {
+    "id": "d-dr-3643-end",
+    "name": "D-DR 3643 END",
+    "brand": "Dürr NDT",
+    "origin": "ALEMANIA",
+    "category": "Placas Digitales",
+    "subcategory": "Radigrafia Digital Directa",
+    "description": "Detector de panel plano de gran tamaño / matriz de detectores digitales (DDA) diseñado para la portabilidad y las duras condiciones de la radiografía industrial. Perfectamente adecuado para imágenes de perfil y objetos grandes",
+    "longDescription": "Área activa de 35 x 43 cm, perfecta para imágenes de perfil. Alto contraste Centelleador GOS de alta sensibilidad. Paso de píxeles de 99 μm (5,0 lp/mm). Adecuado para fuentes de rayos X y gamma. Equipado con apantallamiento interno para uso de hasta 450 kV. Detector de pantalla plana ligero de tamaño completo. Sensor TFT sin vidrio extremadamente robusto. La función de intercambio en caliente permite cambiar la batería durante el funcionamiento. Punto de acceso inalámbrico incorporado. Conector para Gigabit Ethernet y alimentación. Hermético al polvo y al agua (IP67). Pase de prueba de caída de 1 metro.",
+    "price": 1243.0
+  },
+  {
+    "id": "drc-2430he-ndt",
+    "name": "DRC 2430HE NDT",
+    "brand": "Dürr NDT",
+    "origin": "ALEMANIA",
+    "category": "Placas Digitales",
+    "subcategory": "Radigrafia Digital Directa",
+    "description": "Esta matriz de detectores digitales (DDA) de alta resolución ha sido especialmente desarrollada para soportar altas energías en aplicaciones estacionarias y móviles.",
+    "longDescription": "Alta resolución de 76 μm de paso de píxeles (6,5 lp/mm). Adecuado para fuentes de rayos X y gamma. Los componentes sensibles están ubicados fuera del área activa y están especialmente blindados. Diseño robusto con asa para facilitar su transporte. Hermético al polvo e impermeable.  Para aplicaciones fijas y móviles.",
+    "price": 1244.0
+  },
+  {
+    "id": "drp-2020-4040-ndt",
+    "name": "DRP 2020 / 4040 NDT",
+    "brand": "Dürr NDT",
+    "origin": "ALEMANIA",
+    "category": "Placas Digitales",
+    "subcategory": "Radigrafia Digital Directa",
+    "description": "Estos innovadores detectores de panel plano (matrices de detectores digitales) para pruebas no destructivas proporcionan imágenes de rayos X rápidas y de baja dosis.",
+    "longDescription": "Radiografía digital a través de pantalla plana. Estos modelos marcan el comienzo de una nueva generación de detectores de panel plano adecuados para una amplia gama de aplicaciones de END. El paso de píxeles de 200 μm permite que el panel produzca imágenes con una calidad excepcional. Con el fin de proporcionar la solución adecuada para su aplicación, ofrecemos detectores de pantalla plana en dos tamaños físicos diferentes, así como una opción entre profundidades de imagen de 14 bits y 16 bits.",
+    "price": 1245.0
+  },
+  {
+    "id": "go-scan-1025b-port-til-detectores-de-rayos-x",
+    "name": "Go-Scan 1025B. Portátil Detectores de rayos X",
+    "brand": "Teledyne",
+    "category": "Placas Digitales",
+    "subcategory": "Radigrafia Digital Directa",
+    "price": 1246.0
+  },
+  {
+    "id": "go-scan-1043b-port-til-detectores-de-rayos-x",
+    "name": "Go-Scan 1043B. Portátil Detectores de rayos X",
+    "brand": "Teledyne",
+    "category": "Placas Digitales",
+    "subcategory": "Radigrafia Digital Directa",
+    "price": 1247.0
+  },
+  {
+    "id": "go-scan-1506-port-til-detectores-de-rayos-x",
+    "name": "Go-Scan 1506. Portátil Detectores de rayos X",
+    "brand": "Teledyne",
+    "category": "Placas Digitales",
+    "subcategory": "Radigrafia Digital Directa",
+    "price": 1248.0
+  },
+  {
+    "id": "go-scan-15-10-xr-port-til-detectores-de-rayos-x",
+    "name": "Go-Scan 15 10 XR. Portátil Detectores de rayos X",
+    "brand": "Teledyne",
+    "category": "Placas Digitales",
+    "subcategory": "Radigrafia Digital Directa",
+    "price": 1249.0
+  },
+  {
+    "id": "panel-flexible",
+    "name": "Panel flexible",
+    "brand": "Teledyne",
+    "category": "Placas Digitales",
+    "subcategory": "Radigrafia Digital Directa",
+    "price": 1250.0
+  },
+  {
+    "id": "sherlock-icm-teledyne",
+    "name": "Sherlock ICM Teledyne",
+    "category": "Placas Digitales",
+    "subcategory": "Software",
+    "price": 1251.0
+  },
+  {
+    "id": "d-tect-x",
+    "name": "D-TECT X",
+    "category": "Placas Digitales",
+    "subcategory": "Software",
+    "price": 1252.0
+  },
+  {
+    "id": "screening-eagle",
+    "name": "Screening Eagle",
+    "category": "Placas Digitales",
+    "subcategory": "Software",
+    "price": 1253.0
+  },
+  {
+    "id": "d-tect-x-software-de-inspecci-n-por-rayos-x",
+    "name": "D-Tect X - Software de inspección por rayos X",
+    "category": "Placas Digitales",
+    "subcategory": "Software",
+    "description": "D-Tect X proporciona un flujo de trabajo de inspección NDT óptimo y que ahorra tiempo, el complemento perfecto para todos los escáneres de radiografía computarizada y detectores digitales de rayos X.",
+    "longDescription": "Cumple con DICONDE El usuario puede estar seguro de que las imágenes pueden ser vistas y procesadas por cualquier otro sistema compatible con DICONDE. La compatibilidad con GPU y CPU multinúcleo hace que D-Tect X sea extremadamente rápido y eficiente. Todas las funciones están incluidas: desde la adquisición de imágenes, la evaluación de imágenes y la generación de informes hasta la importación y exportación de datos. Integración de Red, además del uso normal de una sola estación de trabajo, el software se puede integrar en una red si se requiere un flujo de trabajo colaborativo",
+    "price": 1254.0
+  },
+  {
+    "id": "instandt-pacs",
+    "name": "instaNDT - PACS",
+    "category": "Placas Digitales",
+    "subcategory": "Software",
+    "description": "instaNDT es un potente sistema de archivo y comunicación de imágenes (PACS), totalmente integrado en D-Tect X y fácil de usar, aumenta la eficiencia y ofrece la máxima seguridad para sus datos de imagen.",
+    "longDescription": "Cumple con DICONDE, instaNDT se puede utilizar con cualquier software compatible con DICOMweb™. Fácil de usar, Interfaz de usuario intuitiva basada en la web. Almacenamiento universal de datos, además de los datos DICONDE de las inspecciones RT, UT, ET, MT y VT, también se puede almacenar y compartir cualquier otro tipo de archivo. ",
+    "price": 1255.0
+  },
+  {
+    "id": "software-de-gesti-n-de-drive-ndt",
+    "name": "Software de gestión de DRIVE NDT",
+    "category": "Placas Digitales",
+    "subcategory": "Software",
+    "description": "DRIVE NDT es un software de gestión basado en la nube que integra todos los métodos de inspección de END y los procesos asociados en un solo sistema. Con DRIVE NDT puede organizar y controlar el flujo de trabajo completo de END, incluidos los informes de pruebas individuales, la gestión de personal, clientes y dispositivos, y mucho más.",
+    "price": 1256.0
+  }
+]
