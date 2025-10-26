@@ -1,0 +1,124 @@
+/* Estilos base para el catálogo. Estos estilos son simples y
+ * están pensados como punto de partida. Puedes modificarlos o
+ * reemplazarlos por un framework de estilo como Tailwind.
+ */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Panel lateral para filtros */
+.filter-panel {
+  width: 260px;
+  padding: 1rem;
+  background-color: #fff;
+  border-right: 1px solid #e5e5e5;
+  box-sizing: border-box;
+}
+
+.filter-panel label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.filter-panel select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Lista de productos */
+.product-list {
+  flex: 1;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 0.75rem;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s;
+}
+
+.product-card:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 0.5rem;
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #222;
+}
+
+.product-card p {
+  margin: 0.25rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.product-detail {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+.product-detail h2 {
+  margin-top: 0;
+}
+
+.product-detail img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+/* Botón "Cargar más" */
+.product-list button {
+  grid-column: 1 / -1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #1976d2;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.product-list button:hover {
+  background-color: #145ca6;
+}
