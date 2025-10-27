@@ -8,24 +8,18 @@ import ProductGrid from "./components/ProductGrid";
 export default function App() {
   const { products, loading, error } = useProducts();
   const [filters, setFilters] = useState(() => readFiltersFromURL());
+  useEffect(() => { writeFiltersToURL(filters); }, [filters]);
+  const filtered = useMemo(() => filterProducts(products, filters), [products, filters]);
 
-  useEffect(() => {
-    writeFiltersToURL(filters);
-  }, [filters]);
-
-  const filtered = useMemo(
-    () => filterProducts(products, filters),
-    [products, filters]
-  );
-
-  if (loading) return <div>Cargando…</div>;
-  if (error) return <div>Error cargando productos</div>;
+  if (loading) return <div className="container">Cargando…</div>;
+  if (error) return <div className="container">Error cargando productos</div>;
 
   return (
-    <div style={{ maxWidth: 1200, margin: "0 auto", padding: "16px" }}>
-      <h1>Catálogo</h1>
+    <div className="container">
+      <h1 className="title">Catálogo</h1>
       <Filters products={products} value={filters} onChange={setFilters} />
       <ProductGrid products={filtered} />
     </div>
   );
 }
+
