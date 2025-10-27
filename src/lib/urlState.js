@@ -1,19 +1,19 @@
-import { Filters } from "./filtering";
-const KEYS: (keyof Filters)[] = ["q","brand","origin","category","subcategory"];
+const KEYS = ["q", "brand", "origin", "category", "subcategory"];
 
-export function readFiltersFromURL(): Filters {
+export function readFiltersFromURL() {
   const sp = new URLSearchParams(window.location.search);
-  const f: Filters = {};
-  KEYS.forEach(k => {
+  const f = {};
+  for (const k of KEYS) {
     const v = sp.get(k);
-    if (v && v.trim() !== "") (f as any)[k] = v;
-  });
+    if (v && v.trim() !== "") f[k] = v;
+  }
   return f;
 }
-export function writeFiltersToURL(f: Filters) {
+
+export function writeFiltersToURL(f) {
   const sp = new URLSearchParams();
   for (const k of KEYS) {
-    const v = (f as any)[k];
+    const v = f[k];
     if (v && String(v).trim() !== "") sp.set(k, String(v));
   }
   const qs = sp.toString();
