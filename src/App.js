@@ -4,6 +4,8 @@ import { filterProducts } from "./lib/filtering";
 import { readFiltersFromURL, writeFiltersToURL } from "./lib/urlState";
 import Filters from "./components/Filters";
 import ProductGrid from "./components/ProductGrid";
+import NavBar from "./components/NavBar";
+
 
 export default function App() {
   const { products, loading, error } = useProducts();
@@ -15,11 +17,15 @@ export default function App() {
   if (error) return <div className="container">Error cargando productos</div>;
 
   return (
-    <div className="container">
-      <h1 className="title">Catálogo</h1>
-      <Filters products={products} value={filters} onChange={setFilters} />
-      <ProductGrid products={filtered} />
+    <div className="containerDad">
+      <NavBar />
+      <div className="container">
+        <h1 className="title">Catálogo</h1>
+        <Filters products={products} value={filters} onChange={setFilters} />
+        <ProductGrid products={filtered} />
+      </div>
     </div>
+
   );
 }
 
