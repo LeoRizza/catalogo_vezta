@@ -4,15 +4,15 @@
   --text: #1c1d22;
   --muted: #6b7178;
   --line: #ececec;
-  --accent: #ef8274;   /* coral principal */
+  --accent: #ef8274;
   --accent-600:#e36d63;
   --accent-100:#ffe1dc;
   --chip:#f7f7f8;
   --shadow: 0 6px 18px rgba(0,0,0,.06), 0 2px 6px rgba(0,0,0,.04);
 }
 
-*{box-sizing:border-box}
-html,body,#root{height:100%}
+*{ box-sizing: border-box; }
+html,body,#root{ height:100%; }
 body{
   margin:0;
   background:var(--bg);
@@ -22,11 +22,11 @@ body{
 
 /* ====== Layout base ====== */
 .container{
-    position: relative;
-    top: 10dvh;
-    max-width: 1200px;
-    padding: 24px 16px 80px;
-    margin: 0 auto;
+  position: relative;
+  top: 10dvh;
+  max-width: 1200px;
+  padding: 24px 16px 80px;
+  margin: 0 auto;
 }
 
 .title{
@@ -47,32 +47,55 @@ body{
   border-radius: 2px;
 }
 
-/* ====== Filtros ====== */
+/* ====== Layout Catálogo (sidebar + contenido) ====== */
+.catalog-layout{
+  display:flex;
+  gap:24px;
+  padding:40px 60px;
+  margin-top: 10dvh;
+  background:#fafafa;
+  min-height:100vh;
+}
+
+.catalog-sidebar{
+  width:280px;
+  flex-shrink:0;
+  background:#fff;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+  position:sticky;
+  top:120px;       /* debajo del navbar */
+  height:fit-content;
+  align-self:flex-start;
+}
+
+.catalog-content{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ====== Filtros (inputs + subcategorías visibles) ====== */
 .filters{
-  display:grid;
-  gap: 12px;
-  grid-template-columns: repeat(5, minmax(0,1fr));
-  align-items: center;
-  background: #fff;
-  border: 1px solid var(--line);
-  padding: 12px;
-  border-radius: 14px;
-  box-shadow: var(--shadow);
-  position: sticky;
-  top: 12px;
-  z-index: 5;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  background:#fff;
+  border:1px solid #e1e1e1;
+  padding:16px;
+  border-radius:10px;
 }
 
 .filters .ctrl{
   width:100%;
-  appearance:none;
-  border:1px solid var(--line);
-  border-radius:10px;
   padding:10px 12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:.9rem;
   background:#fff;
-  color:var(--text);
   outline:none;
-  transition: border-color .15s, box-shadow .15s;
+  transition:border-color .15s, box-shadow .15s;
 }
 .filters .ctrl::placeholder{ color:#a0a4aa; }
 .filters .ctrl:focus{
@@ -80,50 +103,84 @@ body{
   box-shadow: 0 0 0 3px var(--accent-100);
 }
 
-.filters__actions{
-  grid-column: 1 / -1;
-  display:flex;
-  gap:10px;
-  justify-content:flex-end;
+/* Grupo “Subcategorías” SIEMPRE desplegado */
+.filter-group{ margin-top:6px; }
+.group-title{
+  font-weight:700;
+  font-size:.95rem;
+  color:#333333;
+  margin:6px 0 8px;
 }
 
-.btn{
-  border: none;
-  padding: 10px 14px;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  background: var(--accent);
-  color: #fff;
-  transition: transform .05s ease, filter .15s;
+.subcat-list{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  max-height:340px;          /* hace scroll si hay muchas */
+  overflow:auto;
+  padding-right:4px;
 }
-.btn:hover{ filter: brightness(0.95); }
-.btn:active{ transform: translateY(1px); }
+
+.pill{
+  width:100%;
+  text-align:left;
+  background:#ffffff;
+  color:#212121;
+  border:1px solid #e1e1e1;
+  border-radius:8px;
+  padding:8px 10px;
+  font-size:.92rem;
+  cursor:pointer;
+  transition:border-color .15s, background-color .15s, color .15s;
+}
+.pill:hover{ border-color:#d94a3a; }
+.pill.is-active{
+  border-color:#d94a3a;
+  background:#fde6e3;
+  color:#b93e32;
+}
+
+/* Acciones */
+.filters__actions{
+  margin-top:12px;
+  display:flex;
+  justify-content:flex-end;
+}
+.btn{
+  background:#d94a3a;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  padding:8px 14px;
+  font-weight:600;
+  cursor:pointer;
+}
+.btn:hover{ filter:brightness(.9); }
 .btn--ghost{
-  background: #fff;
-  color: var(--accent-600);
-  border: 1px solid var(--accent-100);
+  background:#fff;
+  color:var(--accent-600);
+  border:1px solid var(--accent-100);
 }
 
 /* ====== Grid de tarjetas ====== */
 .grid{
   display:grid;
-  gap: 16px;
+  gap:16px;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  margin-top: 16px;
+  margin-top:16px;
 }
 
 .empty{
-  padding: 24px 0;
-  color: var(--muted);
+  padding:24px 0;
+  color:var(--muted);
 }
 
 /* ====== Tarjeta de producto ====== */
 .card{
   border:1px solid var(--line);
-  border-radius: 16px;
-  background: #fff;
-  box-shadow: var(--shadow);
+  border-radius:16px;
+  background:#fff;
+  box-shadow:var(--shadow);
   overflow:hidden;
   transition: transform .12s ease, box-shadow .12s ease;
 }
@@ -139,50 +196,32 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  border-bottom: 1px solid var(--line);
+  border-bottom:1px solid var(--line);
 }
 .card__image img{
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
+  max-width:90%;
+  max-height:90%;
+  object-fit:contain;
 }
-.card__placeholder{
-  color:#9aa0a6;
-  font-size: 13px;
-}
+.card__placeholder{ color:#9aa0a6; font-size:13px; }
 
-.card__name{
-  padding: 12px 14px 0;
-  font-weight: 700;
-  font-size: 15px;
-}
-.card__meta{
-  padding: 4px 14px 0;
-  color: var(--text);
-  font-size: 12.5px;
-}
-.card__meta--light{
-  color: var(--muted);
-  padding-bottom: 8px;
-}
-.card__price{
-  padding: 8px 14px 14px;
-  font-weight: 800;
-  color: var(--accent-600);
-}
+.card__name{ padding:12px 14px 0; font-weight:700; font-size:15px; }
+.card__meta{ padding:4px 14px 0; color:var(--text); font-size:12.5px; }
+.card__meta--light{ color:var(--muted); padding-bottom:8px; }
+.card__price{ padding:8px 14px 14px; font-weight:800; color:var(--accent-600); }
 
 /* ====== Responsivo ====== */
+@media (max-width: 1024px){
+  .catalog-layout{ padding:32px 24px; }
+}
 @media (max-width: 920px){
-  .filters{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .catalog-layout{ flex-direction:column; }
+  .catalog-sidebar{ position:static; width:100%; }
 }
 @media (max-width: 640px){
-  .filters{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .title{ font-size: 28px; }
+  .title{ font-size:28px; }
 }
 
-/* ====== Tipografía refinada ====== */
-h1,h2,h3{ margin:0; font-weight:800 }
+h1,h2,h3{ margin:0; font-weight:800; }
 
-
-/* NAVBAR */
-
+/* NAVBAR (si usás NavBar.css, dejalo allí; este archivo no lo toca) */

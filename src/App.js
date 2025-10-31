@@ -7,6 +7,7 @@ import ProductGrid from "./components/ProductGrid";
 import NavBar from "./components/NavBar";
 
 
+
 export default function App() {
   const { products, loading, error } = useProducts();
   const [filters, setFilters] = useState(() => readFiltersFromURL());
@@ -17,15 +18,18 @@ export default function App() {
   if (error) return <div className="container">Error cargando productos</div>;
 
   return (
-    <div className="containerDad">
+    <>
       <NavBar />
-      <div className="container">
-        <h1 className="title">Catálogo</h1>
-        <Filters products={products} value={filters} onChange={setFilters} />
-        <ProductGrid products={filtered} />
+      <div className="catalog-layout">
+        <aside className="catalog-sidebar">
+          <Filters products={products} value={filters} onChange={setFilters} />
+        </aside>
+        <main className="catalog-content">
+          <h1 className="title">Catálogo</h1>
+          <ProductGrid products={filtered} />
+        </main>
       </div>
-    </div>
-
+    </>
   );
 }
 
