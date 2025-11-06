@@ -181,6 +181,14 @@
 @media (max-width: 768px) {
   .s-header__menu-toggle { display: block; }
 
+    .s-header__nav-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: solid 2px #F88379;
+}
+
   .s-header__content {
     position: absolute;
     left: 0;
@@ -222,7 +230,7 @@
 /* ------------------------------------------------------------------- 
  * ## mobile menu toggle
  * ------------------------------------------------------------------- */
-.s-header__menu-toggle {
+/* .s-header__menu-toggle {
     z-index: 101;
     display: none;
     height: 4.2rem;
@@ -239,7 +247,7 @@
     position: absolute;
     right: 5.2rem;
     top: 1.6rem;
-}
+} */
 
 .s-header__menu-toggle:hover,
 .s-header__menu-toggle:focus {
@@ -248,7 +256,7 @@
 
 .s-header__menu-toggle span {
     display: block;
-    width: 2.4rem;
+    width: 2rem;
     height: 2px;
     background-color: black;
     -webkit-transition: all .5s;
@@ -259,7 +267,7 @@
     margin-top: -1px;
     position: absolute;
     top: 50%;
-    left: .9rem;
+    left: .3rem;
     right: auto;
     bottom: auto;
 }
