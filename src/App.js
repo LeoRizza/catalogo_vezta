@@ -20,14 +20,19 @@ export default function App() {
   return (
     <>
       <NavBar />
+      <div className="banner_header">
+        <img src="/images/banner_catalogo.jpg" alt="Banner principal" className="banner__img" />
+      </div>
       <div className="catalog-layout">
-        <aside className="catalog-sidebar">
-          <Filters products={products} value={filters} onChange={setFilters} />
-        </aside>
-        <main className="catalog-content">
-          <h1 className="title">Catálogo</h1>
-          <ProductGrid products={filtered} />
-        </main>
+        <div className="contenedorCat">
+          <aside className="catalog-sidebar">
+            <Filters products={products} value={filters} onChange={setFilters} />
+          </aside>
+          <main className="catalog-content">
+            <h1 className="title">Catálogo</h1>
+            <ProductGrid products={filtered} />
+          </main>
+        </div>
       </div>
     </>
   );
