@@ -20,7 +20,7 @@ export default function App() {
   return (
     <>
       <NavBar />
-      <div className="banner_header">
+      <div className="banner_header2">
         <img src="/images/banner_catalogo.jpg" alt="Banner principal" className="banner__img" />
       </div>
       <div className="catalog-layout">
