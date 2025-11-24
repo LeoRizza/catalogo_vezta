@@ -1,16 +1,14 @@
+// src/components/Filters.js
 import { deriveOptions } from "../lib/filtering";
 
 export default function Filters({ products, value, onChange }) {
     const opts = deriveOptions(products);
 
-    const handleField =
-        (k) =>
-            (e) =>
-                onChange({ ...value, [k]: e.target.value || undefined });
+    const handleField = (key) => (e) =>
+        onChange({ ...value, [key]: e.target.value || undefined });
 
     const reset = () => onChange({});
 
-    // Normalizo para soportar (viejo) value.subcategory string o (nuevo) array
     const selectedSubs = Array.isArray(value?.subcategories)
         ? value.subcategories
         : value?.subcategory
@@ -23,14 +21,12 @@ export default function Filters({ products, value, onChange }) {
         onChange({
             ...value,
             subcategories: Array.from(set),
-            // por las dudas, apagamos el viejo campo single
-            subcategory: undefined,
+            subcategory: undefined, // in case of legacy single value
         });
     };
 
     return (
         <div className="filters">
-            {/* Buscar */}
             <input
                 className="ctrl"
                 placeholder="Buscar..."
@@ -38,7 +34,7 @@ export default function Filters({ products, value, onChange }) {
                 onChange={handleField("q")}
             />
 
-            {/* Marca */}
+            {/* Brand selector */}
             <select
                 className="ctrl"
                 value={value?.brand || ""}
@@ -52,21 +48,21 @@ export default function Filters({ products, value, onChange }) {
                 ))}
             </select>
 
-            {/* Origen */}
+            {/* Category selector */}
             <select
                 className="ctrl"
-                value={value?.origin || ""}
-                onChange={handleField("origin")}
+                value={value?.category || ""}
+                onChange={handleField("category")}
             >
-                <option value="">Origen</option>
-                {opts.origins.map((o) => (
-                    <option key={o} value={o}>
-                        {o}
+                <option value="">Categoría</option>
+                {opts.categories.map((c) => (
+                    <option key={c} value={c}>
+                        {c}
                     </option>
                 ))}
             </select>
 
-            {/* Subcategorías SIEMPRE visibles (checkboxes) */}
+            {/* Subcategory checkboxes */}
             <div className="filter-group">
                 <div className="group-title">Subcategorías</div>
                 <div className="subcat-list">

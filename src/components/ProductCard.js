@@ -10,9 +10,9 @@ export default function ProductCard({ p }) {
       <div className="card__meta card__meta--light">
         {p.category || "—"} {p.subcategory ? `› ${p.subcategory}` : ""}
       </div>
-      {"price" in p && p.price != null && (
+      {/* {"price" in p && p.price != null && (
         <div className="card__price">${Number(p.price).toLocaleString("es-AR")}</div>
-      )}
+      )} */}
     </div>
   );
 }
