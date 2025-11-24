@@ -141,15 +141,15 @@ body{
 }
 
 .pill{
-  width:100%;
-  text-align:left;
-  background:#ffffff;
-  color:#212121;
-  border:1px solid #e1e1e1;
-  border-radius:8px;
-  padding:8px 10px;
-  font-size:.92rem;
-  cursor:pointer;
+  width: 100%;
+  text-align: left;
+  background: #ffffff;
+  color: #212121;
+  /* border: 1px solid #e1e1e1; */
+  border-radius: 8px;
+  padding: 1px 10px;
+  font-size: .92rem;
+  cursor: pointer;
   transition:border-color .15s, background-color .15s, color .15s;
 }
 .pill:hover{ border-color:#d94a3a; }

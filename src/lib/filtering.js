@@ -1,27 +1,28 @@
-// src/lib/filtering.js
-export function filterProducts(products, filters) {
-  const q = filters?.q?.trim().toLowerCase();
+// filtering.js
+export function filterProducts(products, f) {
+  const q = f?.q?.trim().toLowerCase();
 
   return (products || []).filter((p) => {
-    // free‑text search – match against name, brand, category, subcategory and any tags
+    // búsqueda de texto libre
     const byQ =
       !q ||
-      [p.name, p.brand, p.category, p.subcategory, ...(p.tags || [])].some(
-        (v) => v && v.toString().toLowerCase().includes(q)
-      );
+      [p.name, p.brand, p.category, p.subcategory, ...(p.tags || [])]
+        .some((v) => v?.toString().toLowerCase().includes(q));
 
-    const byBrand = !filters?.brand || p.brand === filters.brand;
-    const byCategory = !filters?.category || p.category === filters.category;
+    // filtrar por marca (igual que antes)
+    const byBrand = !f?.brand || p.brand === f.brand;
 
-    // allow multi‑select subcategories; filters.subcategories can be array or string
-    const subFilter = filters?.subcategories;
-    const bySubcat =
-      !subFilter ||
-      (Array.isArray(subFilter)
-        ? subFilter.includes(p.subcategory)
-        : p.subcategory === subFilter);
+    // nuevo: filtrar por array de categorías
+    const byCat =
+      !f?.categories || f.categories.length === 0 ||
+      f.categories.includes(p.category);
 
-    return byQ && byBrand && byCategory && bySubcat;
+    // nuevo: filtrar por array de subcategorías
+    const bySub =
+      !f?.subcategories || f.subcategories.length === 0 ||
+      f.subcategories.includes(p.subcategory);
+
+    return byQ && byBrand && byCat && bySub;
   });
 }
 
@@ -32,8 +33,10 @@ export function deriveOptions(products) {
     );
 
   return {
-    brands: uniq(products.map((p) => p.brand)),
-    categories: uniq(products.map((p) => p.category)),
-    subcategories: uniq(products.map((p) => p.subcategory)),
+    brands: uniq((products || []).map((p) => p.brand)),
+    // si en el futuro quisieras usar "origen" puedes dejarlo,
+    // pero no hace falta para el filtro actual.
+    categories: uniq((products || []).map((p) => p.category)),
+    subcategories: uniq((products || []).map((p) => p.subcategory)),
   };
 }
