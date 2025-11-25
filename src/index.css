@@ -54,6 +54,10 @@ body{
   overflow: hidden;
 }
 
+.banner_header {
+    display: block !important;
+}
+
 .banner__img {
   width: 100%;
   height: auto;
