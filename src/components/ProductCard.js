@@ -1,18 +1,55 @@
-export default function ProductCard({ p }) {
-  const img = p.images?.[0];
+// src/components/ProductCard.js
+export default function ProductCard({ product, onSelect }) {
+  const {
+    name,
+    brand,
+    origin,
+    category,
+    subcategory,
+    images,
+    // price, // lo seguís teniendo pero NO lo mostrás
+  } = product;
+
+  const mainImage =
+    (images && images[0]) || product.image || product.imageUrl || null;
+
   return (
-    <div className="card">
+    <article
+      className="card"
+      role="button"
+      tabIndex={0}
+      onClick={onSelect}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onSelect && onSelect();
+        }
+      }}
+    >
       <div className="card__image">
-        {img ? <img src={img} alt={p.name} /> : <span className="card__placeholder">Sin imagen</span>}
+        {mainImage ? (
+          <img src={mainImage} alt={name} />
+        ) : (
+          <div className="card__placeholder">Sin imagen</div>
+        )}
       </div>
-      <div className="card__name">{p.name}</div>
-      <div className="card__meta">{p.brand || "—"} • {p.origin || "—"}</div>
+
+      <h2 className="card__name">{name}</h2>
+      <div className="card__meta">
+        {brand && <span><strong>Marca:</strong> {brand}</span>}
+        {origin && <span> · {origin}</span>}
+      </div>
       <div className="card__meta card__meta--light">
-        {p.category || "—"} {p.subcategory ? `› ${p.subcategory}` : ""}
+        {category && <span>{category}</span>}
+        {subcategory && <span> · {subcategory}</span>}
       </div>
-      {/* {"price" in p && p.price != null && (
-        <div className="card__price">${Number(p.price).toLocaleString("es-AR")}</div>
-      )} */}
-    </div>
+
+      {/* Precio oculto pero disponible para el futuro */}
+      {/*
+      <div className="card__price">
+        {price && <>${price}</>}
+      </div>
+      */}
+    </article>
   );
 }
