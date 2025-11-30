@@ -6,6 +6,8 @@ import Filters from "./components/Filters";
 import ProductGrid from "./components/ProductGrid";
 import NavBar from "./components/NavBar";
 import ProductModal from "./components/ProductModal";
+import LineaFinalCoral from "./components/LineaFinalCoral";
+
 
 
 
@@ -58,6 +60,7 @@ export default function App() {
           onClose={() => setSelectedProduct(null)}
         />
       )}
+      <LineaFinalCoral />
     </>
   );
 }

@@ -605,6 +605,13 @@ body {
   font-family: var(--font-1);
 }
 
+.lineaFinalCoral {
+  margin-top: 15px;
+  height: 0.7rem;
+  width: 100dvw;
+  background: var(--color-1);
+}
+
 /* ====== Layout base ====== */
 .container {
   position: relative;

@@ -1,111 +1,328 @@
-/* Fondo oscuro */
+/* ==== Fondo del modal ==== */
 .modal-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.55);
     display: flex;
-    align-items: center;
     justify-content: center;
-    z-index: 2000;
+    align-items: flex-start;
+    padding: 40px 20px;
+    z-index: 9999;
+    overflow-y: auto;
 }
 
-/* Caja principal */
+/* ==== Contenedor del modal ==== */
 .modal {
-    background: #fff;
-    border-radius: 16px;
-    max-width: 960px;
-    width: 95%;
-    max-height: 90vh;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    background: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1100px;
+    padding: 30px;
     position: relative;
-    display: flex;
-    flex-direction: column;
+    animation: fadeIn 0.25s ease;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.25);
 }
 
-/* Botón cerrar */
+/* Cierre */
 .modal__close {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 18px;
+    right: 18px;
+    font-size: 22px;
+    background: transparent;
     border: none;
-    background: #f5f5f5;
-    border-radius: 999px;
-    width: 32px;
-    height: 32px;
-    font-size: 18px;
     cursor: pointer;
+    opacity: 0.7;
 }
 
-/* Contenido interno */
-.modal__body {
-    display: flex;
-    gap: 24px;
-    padding: 24px;
+.modal__close:hover {
+    opacity: 1;
 }
+
+/* ==== Layout interno ==== */
+.modal__body {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 28px;
+}
+
+@media (max-width: 900px) {
+    .modal__body {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================
+   IMÁGENES
+=============================== */
 
 .modal__images {
-    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.modal__image-wrapper {
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #eee;
-    background: #fafafa;
+/* Imagen principal */
+.modal__image-main img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: contain;
+    background: #f6f6f6;
+    padding: 12px;
+    max-height: 420px;
 }
 
-.modal__image-wrapper img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+/* Carrusel (mobile) */
+.modal__carousel-controls {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-size: 14px;
+    margin-top: 4px;
 }
+
+.modal__carousel-controls button {
+    border: none;
+    background: #eee;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Sólo visible en mobile */
+@media (max-width: 900px) {
+    .modal__carousel-controls {
+        display: flex;
+    }
+}
+
+/* Miniaturas horizontales */
+.modal__thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.modal__thumbnails::-webkit-scrollbar {
+    height: 6px;
+}
+
+.modal__thumbnails::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 999px;
+}
+
+.modal__thumbnail-btn {
+    border: 2px solid transparent;
+    border-radius: 4px;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+.modal__thumbnail-btn img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    background: #f6f6f6;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.modal__thumbnail-btn.is-active {
+    border-color: #e60023;
+    /* podés cambiar este color al de tu marca */
+}
+
+/* Botón video */
+.modal__video-btn {
+    margin-top: 10px;
+    padding: 8px 14px;
+    border-radius: 4px;
+    border: none;
+    background: #e60023;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.modal__video-btn:hover {
+    filter: brightness(0.9);
+}
+
+/* ============================
+   INFORMACIÓN
+=============================== */
 
 .modal__info {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 8px;
 }
 
 .modal__title {
-    font-size: 1.4rem;
-    margin: 0 0 4px;
+    font-size: 32px;
+    margin-bottom: 6px;
+    font-weight: 700;
 }
 
 .modal__meta {
-    font-size: 0.9rem;
+    font-size: 15px;
+    margin-bottom: 6px;
     color: #444;
 }
 
 .modal__meta--light {
-    color: #888;
+    opacity: 0.65;
+    font-size: 14px;
+    margin-bottom: 14px;
 }
 
+/* Precio tipo "Precio a consultar" */
+.modal__price {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: #111;
+}
+
+.CotiDetalleBtn {
+    font-size: 18px;
+    margin-bottom: 16px;
+    border: none;
+    padding: 0.9em 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.CotiDetalleBtn:hover {
+    background-color: #F88379;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.CotiDetalleBtn:active {
+    transform: translateY(-1px);
+}
+
+/* Títulos de sección */
+.modal__section-title {
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+/* Línea separadora */
+.section-line {
+    height: 1px;
+    background: #ddd;
+    margin: 8px 0 12px;
+}
+
+/* Descripción */
 .modal__description {
-    margin-top: 12px;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    white-space: pre-line;
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 20px;
+    color: #222;
 }
 
+/* Especificaciones */
 .modal__specs {
-    margin-top: 12px;
-    font-size: 0.85rem;
+    white-space: pre-line;
+    font-size: 15px;
     background: #fafafa;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #eee;
+    padding: 16px;
+    border-radius: 6px;
+    line-height: 1.55;
+    margin-top: 4px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .modal__body {
-        flex-direction: column;
-        max-height: 80vh;
-        overflow-y: auto;
+/* ============================
+   VIDEO OVERLAY INTERNO
+=============================== */
+
+.modal__video-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal__video-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    background: #000;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.modal__video-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Video responsive 16:9 */
+.modal__video-responsive {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+
+.modal__video-responsive iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ============================
+   Animación
+=============================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Placeholder por si ya lo usabas */
+.card__placeholder {
+    background: #f6f6f6;
+    border-radius: 6px;
+    padding: 40px 10px;
+    text-align: center;
+    color: #777;
+    font-size: 14px;
 }

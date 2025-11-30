@@ -25,6 +25,7 @@ a img {
   background-color: #ffffff;
   opacity: 1;
   visibility: visible;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
 }
 
 
@@ -42,7 +43,7 @@ a img {
 
 .s-header.sticky {
   background-color: var(--color-white);
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+
   /*     opacity: 0;
     visibility: hidden; */
   position: fixed;
