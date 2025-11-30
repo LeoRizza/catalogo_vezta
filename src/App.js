@@ -29,8 +29,6 @@ export default function App() {
   return (
     <>
       <NavBar />
-
-      {/* Banner si lo tenés */}
       <div className="banner_header">
         <img
           src="/images/banner_catalogo.jpg"
