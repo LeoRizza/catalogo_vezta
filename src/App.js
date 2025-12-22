@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+/* import { useEffect, useMemo, useState } from "react";
 import { useProducts } from "./hooks/useProducts";
 import { filterProducts } from "./lib/filtering";
 import { readFiltersFromURL, writeFiltersToURL } from "./lib/urlState";
@@ -48,12 +48,11 @@ export default function App() {
           <h1 className="title">Catálogo</h1>
           <ProductGrid
             products={filtered}
-            onSelectProduct={setSelectedProduct} // ⬅️ pasamos callback
+            onSelectProduct={setSelectedProduct}
           />
         </main>
       </div>
 
-      {/* Modal de detalle */}
       {selectedProduct && (
         <ProductModal
           product={selectedProduct}
@@ -65,3 +64,18 @@ export default function App() {
   );
 }
 
+ */
+
+
+import { Routes, Route } from "react-router-dom";
+import HomeCatalog from "./pages/HomeCatalog";
+import ProductPage from "./pages/ProductPage";
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomeCatalog />} />
+      <Route path="/producto/:id" element={<ProductPage />} />
+    </Routes>
+  );
+}

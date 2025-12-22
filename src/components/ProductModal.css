@@ -326,3 +326,14 @@
     color: #777;
     font-size: 14px;
 }
+
+
+.modal--permanent {
+    position: static;
+    inset: auto;
+    transform: none;
+    margin: 30px auto;
+    max-width: 1200px;
+    width: min(1200px, calc(100% - 40px));
+    box-shadow: none;
+}
