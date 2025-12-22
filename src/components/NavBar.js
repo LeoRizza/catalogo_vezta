@@ -47,7 +47,7 @@ export default function NavBar() {
     return (
         <header className="s-header">
             <div className="s-header__logo">
-                <a href="#hero" className="logo-wrapper">
+                <a href="https://vezta.store" className="logo-wrapper">
                     <img
                         src="images/logo.svg"
                         alt="Homepage"
@@ -61,8 +61,7 @@ export default function NavBar() {
                     <ul className="s-header__nav">
                         <li>
                             <a
-                                className="smoothscroll"
-                                href="#about"
+                                href="https://vezta.store/#about"
                                 title="About"
                                 onClick={handleNavClick}
                             >
@@ -71,8 +70,7 @@ export default function NavBar() {
                         </li>
                         <li>
                             <a
-                                className="smoothscroll"
-                                href="#clients"
+                                href="https://vezta.store/#clients"
                                 title="Catalogo"
                                 onClick={handleNavClick}
                             >
@@ -81,8 +79,7 @@ export default function NavBar() {
                         </li>
                         <li>
                             <a
-                                className="smoothscroll"
-                                href="#industry"
+                                href="https://vezta.store/#industry"
                                 title="Industrias"
                                 onClick={handleNavClick}
                             >
@@ -91,8 +88,7 @@ export default function NavBar() {
                         </li>
                         <li>
                             <a
-                                className="smoothscroll"
-                                href="#contact"
+                                href="https://vezta.store/#contact"
                                 title="Contacto"
                                 onClick={handleNavClick}
                             >
