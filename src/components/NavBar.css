@@ -354,6 +354,10 @@ a img {
     height: 8rem;
   }
 
+  .navButtonLeo {
+    text-align: center;
+  }
+
   .s-header.sticky .s-header__content .btn,
   .s-header .s-header__content .btn {
     --btn-height: calc(var(--vspace-btn) - 1.2rem) !important;

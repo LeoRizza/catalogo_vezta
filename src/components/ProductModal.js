@@ -28,6 +28,173 @@ function getYouTubeEmbedUrl(videoUrl) {
     }
 }
 
+function QuoteForm({ product, onClose }) {
+    const [form, setForm] = useState({
+        nombre: "",
+        empresa: "",
+        email: "",
+        telefono: "",
+        mensaje: "",
+    });
+
+    const [sending, setSending] = useState(false);
+    const [status, setStatus] = useState(null); // "ok" | "error" | null
+
+    const productId =
+        product?.id || product?.code || product?.sku || product?.name || "unknown";
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setSending(true);
+        setStatus(null);
+
+        const payload = {
+            ...form,
+            productId,
+            productName: product?.name,
+            productBrand: product?.brand,
+            productCategory: product?.category,
+            productSubcategory: product?.subcategory,
+            // podés sumar más campos si querés
+        };
+
+        try {
+            const response = await fetch(
+                "https://hook.us2.make.com/8m65w7rnn87qxmt1q5gxmc6jdlhkteaw",
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload),
+                }
+            );
+
+            if (!response.ok) throw new Error("Server response not ok");
+
+            setStatus("ok");
+            setForm({
+                nombre: "",
+                empresa: "",
+                email: "",
+                telefono: "",
+                mensaje: "",
+            });
+        } catch (err) {
+            console.error(err);
+            setStatus("error");
+        } finally {
+            setSending(false);
+        }
+    };
+
+    return (
+        <div className="quoteForm">
+            {/* <div className="quoteForm__head">
+                <h3 className="quoteForm__title">Solicitar cotización</h3>
+                {onClose && (
+                    <button type="button" className="quoteForm__close" onClick={onClose}>
+                        ✕
+                    </button>
+                )}
+            </div> */}
+
+            <form id="contactForm" className="formularioContacto" onSubmit={handleSubmit}>
+                <div className="inputDiv2">
+                    <div style={{ margin: 0 }} className="inputDiv">
+                        <label htmlFor="nombre">Tu Nombre</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            required
+                            className="inputTexto"
+                            value={form.nombre}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div className="inputDiv">
+                        <label htmlFor="empresa">Nombre de tu empresa</label>
+                        <input
+                            type="text"
+                            id="empresa"
+                            name="empresa"
+                            required
+                            className="inputTexto"
+                            value={form.empresa}
+                            onChange={handleChange}
+                        />
+                    </div>
+                </div>
+
+                <div className="inputDiv2">
+                    <div style={{ margin: 0 }} className="inputDiv">
+                        <label htmlFor="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            className="inputCorreo"
+                            value={form.email}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div style={{ margin: 0 }} className="inputDiv">
+                        <label htmlFor="telefono">Teléfono</label>
+                        <input
+                            type="tel"
+                            id="telefono"
+                            name="telefono"
+                            className="inputTelefono"
+                            value={form.telefono}
+                            onChange={handleChange}
+                        />
+                    </div>
+                </div>
+
+                <div style={{ margin: 0 }}>
+                    <label htmlFor="mensaje">Tu mensaje</label>
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        required
+                        className="inputMensaje"
+                        value={form.mensaje}
+                        onChange={handleChange}
+                        placeholder={`Consulta por: ${product?.name || ""}`}
+                    />
+                </div>
+
+                {/* Esto te deja visible qué producto se está enviando */}
+                <input type="hidden" name="productId" value={productId} />
+
+                <button type="submit" className="botonEnviar" disabled={sending}>
+                    {sending ? "Enviando..." : "Enviar"}
+                </button>
+
+                {status === "ok" && (
+                    <p className="quoteForm__ok">
+                        ¡Gracias! En breve será contactado por un asesor comercial.
+                    </p>
+                )}
+
+                {status === "error" && (
+                    <p className="quoteForm__error">
+                        Ocurrió un error al enviar. Por favor, probá de nuevo.
+                    </p>
+                )}
+            </form>
+        </div>
+    );
+}
+
+
 export default function ProductModal({ product, onClose, permanent = false }) {
     if (!product) return null;
 
@@ -51,6 +218,7 @@ export default function ProductModal({ product, onClose, permanent = false }) {
             : [product.image || product.imageUrl].filter(Boolean)) || [];
 
     const [activeIndex, setActiveIndex] = useState(0);
+    const [showQuote, setShowQuote] = useState(false);
     const [showVideo, setShowVideo] = useState(false);
 
     const safeIndex =
@@ -74,7 +242,7 @@ export default function ProductModal({ product, onClose, permanent = false }) {
     };
 
     return permanent ? (
-        // ✅ MODO PÁGINA (sin backdrop, sin cerrar)
+        // ✅ MODO PÁGINA 
         <div className="modal modal--permanent">
             <div className="modal__body">
                 {/* COLUMNA IZQUIERDA: IMÁGENES + VIDEO */}
@@ -90,7 +258,7 @@ export default function ProductModal({ product, onClose, permanent = false }) {
                         )}
                     </div>
 
-                    {/* Controles de carrusel (se muestran en mobile por CSS) */}
+                    {/* Controles de carrusel */}
                     {imgs.length > 1 && (
                         <div className="modal__carousel-controls">
                             <button onClick={handlePrev} aria-label="Imagen anterior">
@@ -153,10 +321,39 @@ export default function ProductModal({ product, onClose, permanent = false }) {
                         {subcategory && <span> · {subcategory}</span>}
                     </p>
 
-                    {/* Ojo: acá tenías description duplicada. Lo dejo corregido a 1 sola vez */}
-                    {description && <p className="modal__meta modal__description">{description}</p>}
+{/*                     {description && <p className="modal__meta modal__description">{description}</p>}
 
-                    <button className="CotiDetalleBtn">Solicitar Cotización</button>
+                    <button
+                        type="button"
+                        className="CotiDetalleBtn"
+                        onClick={() => setShowQuote((v) => !v)}
+                    >
+                        Solicitar Cotización
+                    </button> */}
+
+                    {showQuote && (
+                        <QuoteForm
+                            product={product}
+                            onClose={() => setShowQuote(false)}
+                        />
+                    )}
+
+
+                    {showQuote && (
+                        <QuoteForm
+                            product={product}
+                            onClose={() => setShowQuote(false)}
+                        />
+                    )}
+
+
+                    {showQuote && (
+                        <QuoteForm
+                            product={product}
+                            onClose={() => setShowQuote(false)}
+                        />
+                    )}
+
 
                     {(longDescription || description) && (
                         <>
@@ -289,7 +486,24 @@ export default function ProductModal({ product, onClose, permanent = false }) {
 
                         {description && <p className="modal__meta modal__description">{description}</p>}
 
-                        <button className="CotiDetalleBtn">Solicitar Cotización</button>
+                        <button
+                            type="button"
+                            className="CotiDetalleBtn"
+                            onClick={() => setShowQuote(v => !v)}
+                            aria-expanded={showQuote}
+                        >
+                            {showQuote ? "Formulario de contacto" : "Solicitar Cotización"}
+                        </button>
+
+                        {showQuote && (
+                            <div className="quoteFormWrap" onClick={(e) => e.stopPropagation()}>
+                                <QuoteForm
+                                    product={product}
+                                    onClose={() => setShowQuote(false)}
+                                />
+                            </div>
+                        )}
+
 
                         {(longDescription || description) && (
                             <>

@@ -62,6 +62,7 @@ export default function NavBar() {
                         <li>
                             <a
                                 href="https://vezta.store/#about"
+                                className="navButtonLeo"
                                 title="About"
                                 onClick={handleNavClick}
                             >
@@ -71,6 +72,7 @@ export default function NavBar() {
                         <li>
                             <a
                                 href="https://vezta.store/#clients"
+                                className="navButtonLeo"
                                 title="Catalogo"
                                 onClick={handleNavClick}
                             >
@@ -80,6 +82,7 @@ export default function NavBar() {
                         <li>
                             <a
                                 href="https://vezta.store/#industry"
+                                className="navButtonLeo"
                                 title="Industrias"
                                 onClick={handleNavClick}
                             >
@@ -89,6 +92,7 @@ export default function NavBar() {
                         <li>
                             <a
                                 href="https://vezta.store/#contact"
+                                className="navButtonLeo"
                                 title="Contacto"
                                 onClick={handleNavClick}
                             >

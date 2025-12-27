@@ -50,6 +50,10 @@
     .modal__body {
         grid-template-columns: 1fr;
     }
+
+    .modal__title {
+        font-size: 24px!important;
+    }
 }
 
 /* ============================
@@ -336,4 +340,160 @@
     max-width: 1200px;
     width: min(1200px, calc(100% - 40px));
     box-shadow: none;
+}
+
+
+/* ====== Quote form (debajo del botón) ====== */
+
+.quoteFormWrap {
+    margin-top: 16px;
+}
+
+.quoteForm {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, .10);
+    border-radius: 12px;
+    padding: 18px 18px 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.quoteForm__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.quoteForm__title {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    opacity: .85;
+}
+
+.quoteForm__close {
+    border: 0;
+    background: transparent;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: .65;
+}
+
+.quoteForm__close:hover {
+    opacity: 1;
+}
+
+/* Form */
+.formularioContacto {
+    width: 100%;
+}
+
+.inputDiv2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.inputDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.formularioContacto label {
+    display: block;
+    font-size: .85rem;
+    opacity: .85;
+}
+
+/* Base input styles (tu snippet adaptado) */
+.inputTexto,
+.inputCorreo,
+.inputTelefono,
+.inputMensaje {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #555555;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #000000;
+    outline: none;
+
+    font-family: var(--font-1, inherit);
+    font-size: var(--text-sm, 0.95rem);
+    line-height: var(--input-line-height, 1.2);
+
+    padding: 10px 14px;
+    transition: all .2s ease-in-out;
+}
+
+/* Textarea */
+.inputMensaje {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* Focus */
+.inputTexto:focus,
+.inputCorreo:focus,
+.inputTelefono:focus,
+.inputMensaje:focus {
+    border-color: #111111;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, .10);
+}
+
+/* Button */
+.botonEnviar {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: .02em;
+
+    background: #111111;
+    color: #ffffff;
+    transition: transform .05s ease-in-out, opacity .2s ease-in-out;
+}
+
+.botonEnviar:active {
+    transform: translateY(1px);
+}
+
+.botonEnviar:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+/* Status messages */
+.quoteForm__ok,
+.quoteForm__error {
+    margin-top: 10px;
+    font-size: .9rem;
+}
+
+.quoteForm__ok {
+    color: #0f7a3a;
+}
+
+.quoteForm__error {
+    color: #b00020;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+    .inputDiv2 {
+        grid-template-columns: 1fr;
+    }
+
+    .quoteForm {
+        padding: 14px;
+        border-radius: 10px;
+    }
 }
