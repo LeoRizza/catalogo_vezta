@@ -47,7 +47,7 @@ export default function HomeCatalog() {
 
             <div className="banner_header">
                 <img
-                    src="/images/banner_catalogo.jpg"
+                    src="https://res.cloudinary.com/dxmydmsjl/image/upload/v1767694391/banner_catalogo_1_of_1_ehclyr.png"
                     alt="Banner principal"
                     className="banner__img"
                 />
